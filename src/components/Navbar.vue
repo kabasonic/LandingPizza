@@ -1,53 +1,34 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light " >
-<!--    <a class="navbar-brand" href="#">Pizza</a>-->
-   <div class="container">
-     <button class="navbar-toggler"
-             type="button"
-             data-toggle="collapse"
-             data-target="#navbarNav"
-             aria-controls="navbarNav"
-             aria-expanded="false"
-             aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-     </button>
+  <div>
+    <b-navbar toggleable="md" class="mx-auto">
+      <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+      <!--      <b-navbar-brand>Pizza</b-navbar-brand>-->
+      <b-collapse id="nav-text-collapse" is-nav>
+        <div class="container ">
+          <b-navbar-nav>
+            <router-link class="nav-link" to="/">Home</router-link>
+            <router-link class="nav item nav-link " to="/shop/all">Menu</router-link>
+            <router-link class="nav-link" to="/about">About</router-link>
+            <router-link class="nav-link" to="/pricing-delivery">Pricing & Delivery</router-link>
+            <router-link class="nav-link" to="/news">News</router-link>
+            <router-link class="nav-link" to="/reviews">Reviews</router-link>
+            <router-link class="nav-link" to="/contacts">Contacts</router-link>
+          </b-navbar-nav>
 
-     <div class="collapse navbar-collapse " id="navbarNav">
-       <ul class="navbar-nav mr-auto">
-         <li class="nav-item ">
-           <router-link class="nav-link" to="/">Home</router-link>
-         </li>
-         <li class="nav-item">
-           <router-link class="nav item nav-link " to="/shop/all">Menu</router-link>
-         </li>
-         <li class="nav-item">
-           <router-link class="nav-link" to="/about">About</router-link>
-         </li>
-         <li class="nav-item">
-           <router-link class="nav-link" to="/pricing-delivery">Pricing & Delivery</router-link>
-         </li>
-         <li class="nav-item">
-           <router-link class="nav-link" to="/news">News</router-link>
-         </li>
-         <li class="nav-item">
-           <router-link class="nav-link" to="/reviews">Reviews</router-link>
-         </li>
-         <li class="nav-item">
-           <router-link class="nav-link" to="/contacts">Contacts</router-link>
-         </li>
+          <b-navbar-nav class="ml-auto d-none d-lg-block">
+            <router-link class="nav-link" to="#">
+              <b-icon-bag></b-icon-bag>
+              <span class="badge badge-success ml-2">0</span>
+            </router-link>
 
-       </ul>
-       <ul class="navbar-nav ml-auto">
-         <li class="nav-item ">
-           <router-link class="nav-link" to="#">
-             <b-icon-bag></b-icon-bag>
-             <span class="badge badge-success ml-2">0</span>
-           </router-link>
-         </li>
-       </ul>
-     </div>
-   </div>
-  </nav>
+          </b-navbar-nav>
+
+        </div>
+      </b-collapse>
+
+
+    </b-navbar>
+  </div>
 </template>
 
 <script>
@@ -57,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.hujnia{
+.hujnia {
   font-size: 18px;
 }
 

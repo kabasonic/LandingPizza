@@ -1,18 +1,17 @@
 <template>
-  <div class="reviews">
-    <Navbar/>
+  <div class="app-background">
     <h1>Reviews</h1>
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
 export default {
-  name: "Reviews",
-  components: {Navbar}
+  name: "Reviews"
 }
 </script>
 
 <style scoped>
-
+.app-background {
+  background-image: url("../assets/bg.png");
+}
 </style>

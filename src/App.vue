@@ -14,6 +14,6 @@ import Footer from "@/components/Footer";
 
 export default {
   components: {Footer, SubNavbar, Navbar},
-
 }
+
 </script>

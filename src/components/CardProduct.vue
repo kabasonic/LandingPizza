@@ -1,10 +1,8 @@
 <template>
   <div class="card">
-
     <div class="stickers">
       <div class="sticker-element hit">Хит</div>
     </div>
-
     <div class="table-image">
       <div class="table-cell">
         <img src="../assets/pizza/img.png" class="card-img-top" alt="">
