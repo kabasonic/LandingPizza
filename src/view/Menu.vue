@@ -1,44 +1,45 @@
 <template>
   <div class="app-background">
-    <div class="container row">
-            <div class="col-md-4 col-lg-3">
-              <nav class="navbar bg-light">
-                <!-- Links -->
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pizza</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Snacks</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Ossetian pies</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Salads</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Desserts</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Drinks</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-4 col-lg-3">
+          <nav class="navbar mt-5 content">
+            <!-- Links -->
+            <ul class="navbar-nav pl-3">
+              <li class="nav-item">
+                <router-link class="nav-link" to="#">Pizza</router-link>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Snacks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ossetian pies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Salads</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Desserts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Drinks</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-            <div class="col-md-8 col-lg-9">
-                    <div>
-                      <h2>Popular eats</h2>
-                      <div class="row mb-3">
-                        <div v-for="(product, index) in products" :key="index" class="col-md-3 mt-4">
-                          <CardProduct :product="product"/>
-                        </div>
-                      </div>
-                    </div>
+        <div class="col-md-8 col-lg-9">
+          <div>
+            <h2>Popular eats</h2>
+            <div class="row mb-3 d-flex justify-content-center">
+              <div v-for="(product, index) in products" :key="index" class="col-sm-7 col-md-5 col-lg-4">
+                <CardProduct :product="product"/>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
 </template>
 
@@ -106,26 +107,13 @@ export default {
           text: 'Lorem 8',
           price: 888,
           weight: 880
-        }
-      ],
-      promotions: [
-        {
-          img: '../assets/img_news.png',
-          date: '01.01.2021',
-          title: 'Title News 1',
-          desc: 'Description 1'
         },
         {
-          img: '../assets/img_news.png',
-          date: '02.02.2021',
-          title: 'Title News 2',
-          desc: 'Description 2'
-        },
-        {
-          img: '../assets/img_news.png',
-          date: '03.03.2021',
-          title: 'Title News 3',
-          desc: 'Description 3'
+          img: '../assets/pizza/img.png',
+          name: 'Product 8',
+          text: 'Lorem 8',
+          price: 888,
+          weight: 880
         }
       ]
     }
@@ -141,5 +129,17 @@ export default {
 <style scoped>
 .app-background {
   background-image: url("../assets/bg.png");
+}
+
+.content {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 32px;
+  padding: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link{
+  color: black;
 }
 </style>

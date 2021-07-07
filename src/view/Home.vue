@@ -1,69 +1,62 @@
 <template>
   <div class="app-background bp-3">
     <Carousel/>
-      <div class="container ">
-        <div>
-          <h2>Popular eats</h2>
-          <div class="row mb-3">
-            <div v-for="(product, index) in products" :key="index" class="col-md-3 mt-4">
-              <CardProduct :product="product"/>
-            </div>
+    <div class="container ">
+      <div>
+        <h2>Popular eats</h2>
+        <div class="row mb-3">
+          <div v-for="(product, index) in products" :key="index" class="col-sm-6 col-md-4 col-lg-3">
+            <CardProduct :product="product"/>
           </div>
         </div>
-
-        <div>
-          <h2>New eats</h2>
-          <div class="row mb-3">
-            <div v-for="(product, index) in products" :key="index" class="col-md-3 mt-4">
-              <CardProduct :product="product"/>
-            </div>
-          </div>
-        </div>
-
-        <div class="d-flex justify-content-center py-4">
-          <button type="button" class="btn btn-primary btn-lg ">Large button</button>
-        </div>
-
       </div>
+
+      <div>
+        <h2>New eats</h2>
+        <div class="row mb-3">
+          <div v-for="(product, index) in products" :key="index" class="col-sm-6 col-md-4 col-lg-3">
+            <CardProduct :product="product"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center py-4">
+        <button type="button" class="btn btn-primary btn-lg ">Large button</button>
+      </div>
+
+    </div>
     <!--        Section-->
     <div class="vantages py-4">
-      <div class="container">
-        <div class="d-flex justify-content-between flex-column flex-md-row  py-3">
-          <div class="d-flex align-items-center ">
-            <div class="d-none d-lg-block px-3">
-              <img src="../assets/section/img.png" alt="Not found"/>
-            </div>
-            <div class="text-section">
-              Lorem Ipsum
-            </div>
-          </div>
-
-          <div class="d-flex align-items-center ">
-            <div class="d-none d-lg-block px-3">
-              <img src="../assets/section/img_1.png" alt="Not found"/>
-            </div>
+      <div class="d-flex align-items-center flex-column py-3">
+        <div class="d-flex  flex-md-row  ">
+          <div class="d-flex justify-content-between ">
+            <img src="../assets/section/img.png" alt="Not found"/>
             <div class="text-section">
               Lorem ipsum
             </div>
           </div>
 
-          <div class="d-flex align-items-center ">
-            <div class="d-none d-lg-block px-3">
-              <img src="../assets/section/img_2.png" alt="Not found"/>
-            </div>
+          <div class="d-flex align-items-center px-3">
+            <img src="../assets/section/img_1.png" alt="Not found"/>
             <div class="text-section">
               Lorem ipsum
             </div>
           </div>
 
-          <div class="d-flex align-items-center ">
-            <div class="d-none d-lg-block px-3">
-              <img src="../assets/section/img_3.png" alt="Not found"/>
-            </div>
+          <div class="d-flex align-items-center px-3">
+            <img src="../assets/section/img_2.png" alt="Not found"/>
             <div class="text-section">
               Lorem ipsum
             </div>
           </div>
+
+          <div class="d-flex align-items-center px-3">
+            <img src="../assets/section/img_3.png" alt="Not found"/>
+            <div class="text-section">
+              Lorem ipsum
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -92,8 +85,8 @@ export default {
   name: "Home",
   components: {CardNews, Carousel, CardProduct},
 
-  data(){
-    return{
+  data() {
+    return {
       products: [
         {
           img: '../assets/pizza/img.png',
@@ -204,11 +197,11 @@ export default {
       ]
     }
   },
-  methods:{
-    setProduct(data){
+  methods: {
+    setProduct(data) {
       this.products = data
     },
-    setPromotion(dataPromotions){
+    setPromotion(dataPromotions) {
       this.promotions = dataPromotions
     }
   },
@@ -224,18 +217,27 @@ export default {
   background-image: url("../assets/bg.png");
 }
 
-.h2{
-  color:white;
+.h2 {
+  color: white;
 }
 
 .vantages {
   background-color: #ee8225;
   background-image: url(../assets/asfalt_light.png);
 }
-.btn{
+
+.btn {
+  width: 200px;
+  background: #ee8225;
+  border-color: #ee8225;
+  color: #fff;
+}
+
+.btn:hover, .btn:focus, .btn:active {
   background: #E73E2D;
   border-color: #E73E2D;
   color: #fff;
+  box-shadow: none;
 }
 
 .about-section {
@@ -243,7 +245,7 @@ export default {
   background-image: url(../assets/asfalt_light.png);
 }
 
-.text-section{
+.text-section {
   color: white;
   font-family: Montserrat;
   font-size: 22px;

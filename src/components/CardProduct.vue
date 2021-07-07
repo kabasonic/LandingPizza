@@ -1,23 +1,44 @@
 <template>
-  <div class="card">
+  <div class="card con">
     <div class="stickers">
       <div class="sticker-element hit">Хит</div>
     </div>
-    <div class="table-image">
-      <div class="table-cell px-3 py-3">
-        <img src="../assets/pizza/img.png" style="width:100%" class="card-img-top" alt="">
-      </div>
+    <div class="img">
+      <img src="../assets/pizza/img.png" class="card-img-top" alt="">
     </div>
 
     <div class="card-body">
-      <h5 class="card-title">Name: {{ product.name }}</h5>
-      <p class="card-text">Desc.: {{product.text}}</p>
-      <p class="card-text">Price: {{product.price}}</p>
-      <p class="card-text">Weight: {{product.weight}}</p>
-      <a href="#" class="btn btn-primary" @click="addProduct">+</a>
-<!--      <input type="text">-->
-      {{counter}}
-      <a href="#" class="btn btn-primary" @click="deleteProduct">-</a>
+      <div class="row">
+        <div class="col-12 d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <span>Loremipsum</span>
+            <b-icon icon="exclamation-circle"></b-icon>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span><b>24zł</b></span>
+            <span>500gr</span>
+          </div>
+          <div class="d-flex mt-3">
+            <div class="btn btn-primary w-100" @click="addProduct">+</div>
+            <input type="text" v-model="counter" class="mx-1" style="width: 30px; text-align: center;">
+            <div class="btn btn-primary w-100" @click="deleteProduct">-</div>
+
+          </div>
+          <div class="btn btn-primary mt-3 " style="width: 100%" @click="deleteProduct">Add</div>
+        </div>
+
+      </div>
+
+      <!--      <h1 class="card-title">Name: {{ product.name }}</h1>-->
+      <!--      <p class="card-text">Desc.: {{product.text}}</p>-->
+      <!--      <p class="card-text">Price: {{product.price}}</p>-->
+      <!--      <p class="card-text">Weight: {{product.weight}}</p>-->
+      <!--      <div class="d-flex">-->
+      <!--        <div class="btn btn-primary w-100" @click="addProduct" >+</div>-->
+      <!--        <input type="text" v-model="counter" class="mx-1" style="width: 30px">-->
+      <!--        <div class="btn btn-primary w-100" @click="deleteProduct">-</div>-->
+      <!--      </div>-->
+
     </div>
   </div>
 
@@ -37,9 +58,9 @@ export default {
       console.log('here +')
       this.counter++
     },
-    deleteProduct(){
+    deleteProduct() {
       console.log('here -')
-      if(this.counter>1){
+      if (this.counter > 1) {
         this.counter--
       }
     }
@@ -69,19 +90,32 @@ export default {
   background: #FFB200;
 }
 
-.table-image{
-  display: table;
+/*.table-image{*/
+/*  display: table;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*}*/
+
+/*.table-cell {*/
+/*  display: table-cell;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  vertical-align: middle;*/
+/*}*/
+
+.img {
+  margin-top: 25px;
   width: 100%;
-  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
-.table-cell {
-  display: table-cell;
+.con {
   width: 100%;
-  height: 100%;
-  vertical-align: middle;
+  background: #fff;
+  margin-bottom: 32px;
+  padding: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
-
-
 
 </style>

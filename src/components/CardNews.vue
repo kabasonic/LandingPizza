@@ -2,10 +2,12 @@
   <div class="card" >
     <img src="../assets/img_news.png" class="card-img-top" alt="...">
     <div class="card-body">
-      <p class="card-text">Date: {{promotion.date}}</p>
-      <h5 class="card-title">Title: {{promotion.title}}</h5>
-      <p class="card-text">Desc.: {{promotion.desc}}</p>
-      <a href="#" class="btn btn-primary">More</a>
+      <p class="card-text ">{{promotion.date}}</p>
+      <p class="card-text"><b>{{promotion.title}}</b></p>
+      <p class="card-text">{{promotion.desc}}</p>
+      <div class="d-flex justify-content-end">
+        <div href="#" class="btn btn-primary">More</div>
+      </div>
     </div>
   </div>
 </template>
@@ -18,5 +20,7 @@ export default {
 </script>
 
 <style scoped>
-
+.btn{
+  width: 100px;
+}
 </style>
