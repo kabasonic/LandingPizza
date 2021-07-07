@@ -4,8 +4,8 @@
       <div class="sticker-element hit">Хит</div>
     </div>
     <div class="table-image">
-      <div class="table-cell">
-        <img src="../assets/pizza/img.png" class="card-img-top" alt="">
+      <div class="table-cell px-3 py-3">
+        <img src="../assets/pizza/img.png" style="width:100%" class="card-img-top" alt="">
       </div>
     </div>
 

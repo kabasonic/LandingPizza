@@ -1,5 +1,5 @@
 <template>
-  <div class="app-background">
+  <div class="app-background bp-3">
     <Carousel/>
       <div class="container ">
         <div>
@@ -20,62 +20,66 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center py-4">
           <button type="button" class="btn btn-primary btn-lg ">Large button</button>
         </div>
 
-<!--        Section-->
-        <div class="vantages">
-          <div class="container">
-            <div class="d-flex justify-content-between flex-column flex-md-row  py-3">
-              <div class="d-flex align-items-center ">
-                <div class="d-none d-lg-block">
-                  <img src="../assets/section/img.png" alt="Not found"/>
-                </div>
-                <div>
-                  Lorem Ipsum
-                </div>
-              </div>
+      </div>
+    <!--        Section-->
+    <div class="vantages py-4">
+      <div class="container">
+        <div class="d-flex justify-content-between flex-column flex-md-row  py-3">
+          <div class="d-flex align-items-center ">
+            <div class="d-none d-lg-block px-3">
+              <img src="../assets/section/img.png" alt="Not found"/>
+            </div>
+            <div class="text-section">
+              Lorem Ipsum
+            </div>
+          </div>
 
-              <div class="d-flex align-items-center ">
-                <div class="d-none d-lg-block">
-                  <img src="../assets/section/img_1.png" alt="Not found"/>
-                </div>
-                <div>
-                  Lorem ipsum
-                </div>
-              </div>
+          <div class="d-flex align-items-center ">
+            <div class="d-none d-lg-block px-3">
+              <img src="../assets/section/img_1.png" alt="Not found"/>
+            </div>
+            <div class="text-section">
+              Lorem ipsum
+            </div>
+          </div>
 
-              <div class="d-flex align-items-center ">
-                <div class="d-none d-lg-block">
-                  <img src="../assets/section/img_2.png" alt="Not found"/>
-                </div>
-                <div>
-                  Lorem ipsum
-                </div>
-              </div>
+          <div class="d-flex align-items-center ">
+            <div class="d-none d-lg-block px-3">
+              <img src="../assets/section/img_2.png" alt="Not found"/>
+            </div>
+            <div class="text-section">
+              Lorem ipsum
+            </div>
+          </div>
 
-              <div class="d-flex align-items-center ">
-                <div class="d-none d-lg-block">
-                  <img src="../assets/section/img_3.png" alt="Not found"/>
-                </div>
-                <div>
-                  Lorem ipsum
-                </div>
-              </div>
+          <div class="d-flex align-items-center ">
+            <div class="d-none d-lg-block px-3">
+              <img src="../assets/section/img_3.png" alt="Not found"/>
+            </div>
+            <div class="text-section">
+              Lorem ipsum
             </div>
           </div>
         </div>
-<!--        Section-->
+      </div>
+    </div>
+    <!--        Section-->
 
-        <h2>News and promotions</h2>
-        <div class="row mb-3">
-          <div v-for="(promotion,index) in promotions" :key="index" class="col-md-3 mt-4">
+    <div class="about-section py-3">
+      <div class="container">
+        <h2 class="py-3 h2">News and promotions</h2>
+        <div class="row mb-4">
+          <div v-for="(promotion,index) in promotions" :key="index" class="col-md-4 mt-4">
             <CardNews :promotion="promotion"/>
           </div>
         </div>
-
       </div>
+    </div>
+
   </div>
 </template>
 
@@ -166,6 +170,36 @@ export default {
           date: '03.03.2021',
           title: 'Title News 3',
           desc: 'Description 3'
+        },
+        {
+          img: '../assets/img_news.png',
+          date: '03.03.2021',
+          title: 'Title News 3',
+          desc: 'Description 3'
+        },
+        {
+          img: '../assets/img_news.png',
+          date: '03.03.2021',
+          title: 'Title News 3',
+          desc: 'Description 3'
+        },
+        {
+          img: '../assets/img_news.png',
+          date: '03.03.2021',
+          title: 'Title News 3',
+          desc: 'Description 3'
+        },
+        {
+          img: '../assets/img_news.png',
+          date: '03.03.2021',
+          title: 'Title News 3',
+          desc: 'Description 3'
+        },
+        {
+          img: '../assets/img_news.png',
+          date: '03.03.2021',
+          title: 'Title News 3',
+          desc: 'Description 3'
         }
       ]
     }
@@ -190,9 +224,28 @@ export default {
   background-image: url("../assets/bg.png");
 }
 
+.h2{
+  color:white;
+}
+
 .vantages {
   background-color: #ee8225;
   background-image: url(../assets/asfalt_light.png);
 }
+.btn{
+  background: #E73E2D;
+  border-color: #E73E2D;
+  color: #fff;
+}
 
+.about-section {
+  background-color: darkslategrey;
+  background-image: url(../assets/asfalt_light.png);
+}
+
+.text-section{
+  color: white;
+  font-family: Montserrat;
+  font-size: 22px;
+}
 </style>
