@@ -6,7 +6,7 @@
         <h2>Popular eats</h2>
         <div class="row mb-3">
           <div v-for="(product, index) in products" :key="index" class="col-sm-6 col-md-4 col-lg-3">
-            <CardProduct :product="product"/>
+            <CardProduct :product="product" @new-product="onNewProduct"/>
           </div>
         </div>
       </div>
@@ -80,6 +80,9 @@
 import Carousel from "@/components/Carousel";
 import CardProduct from "@/components/CardProduct";
 import CardNews from "@/components/CardNews";
+import axios from 'axios'
+
+
 
 export default {
   name: "Home",
@@ -87,64 +90,7 @@ export default {
 
   data() {
     return {
-      products: [
-        {
-          img: '../assets/pizza/img.png',
-          name: 'Product 1',
-          text: 'Lorem 1',
-          price: 111,
-          weight: 110
-        },
-        {
-          img: '../assets/pizza/img.png',
-          name: 'Product 2',
-          text: 'Lorem 2',
-          price: 222,
-          weight: 220
-        },
-        {
-          img: '../assets/pizza/img.png',
-          name: 'Product 3',
-          text: 'Lorem 3',
-          price: 333,
-          weight: 330
-        },
-        {
-          img: '../assets/pizza/img.png',
-          name: 'Product 4',
-          text: 'Lorem 4',
-          price: 444,
-          weight: 440
-        },
-        {
-          img: '../assets/pizza/img.png',
-          name: 'Product 5',
-          text: 'Lorem 5',
-          price: 555,
-          weight: 220
-        },
-        {
-          img: '../assets/pizza/img.png',
-          name: 'Product 6',
-          text: 'Lorem 6',
-          price: 666,
-          weight: 660
-        },
-        {
-          img: '../assets/pizza/img.png',
-          name: 'Product 7',
-          text: 'Lorem 7',
-          price: 777,
-          weight: 770
-        },
-        {
-          img: '../assets/pizza/img.png',
-          name: 'Product 8',
-          text: 'Lorem 8',
-          price: 888,
-          weight: 880
-        }
-      ],
+      products: [],
       promotions: [
         {
           img: '../assets/img_news.png',
@@ -203,10 +149,17 @@ export default {
     },
     setPromotion(dataPromotions) {
       this.promotions = dataPromotions
+    },
+    onNewProduct(product) {
+      this.products.push(product)
     }
   },
 
   mounted() {
+    axios
+        .get("http://127.0.0.1:40721/api/v1/products")
+        .then((response) => this.setProduct(response.data))
+        .catch((error) => console.log(error))
   }
 
 }

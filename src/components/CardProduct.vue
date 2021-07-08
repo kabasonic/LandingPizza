@@ -11,12 +11,12 @@
       <div class="row">
         <div class="col-12 d-flex flex-column">
           <div class="d-flex justify-content-between">
-            <span>Loremipsum</span>
+            <span>{{ product.title }}</span>
             <b-icon icon="exclamation-circle"></b-icon>
           </div>
           <div class="d-flex justify-content-between">
-            <span><b>24zł</b></span>
-            <span>500gr</span>
+            <span><b>{{ product.price }}</b></span>
+            <span>{{ product.weight }}</span>
           </div>
           <div class="d-flex mt-3">
             <div class="btn btn-primary w-100" @click="addProduct">+</div>
@@ -24,20 +24,20 @@
             <div class="btn btn-primary w-100" @click="deleteProduct">-</div>
 
           </div>
-          <div class="btn btn-primary mt-3 " style="width: 100%" @click="deleteProduct">Add</div>
+          <div class="btn btn-primary mt-3 " style="width: 100%" @click="sendData">Add</div>
         </div>
 
       </div>
 
-      <!--      <h1 class="card-title">Name: {{ product.name }}</h1>-->
-      <!--      <p class="card-text">Desc.: {{product.text}}</p>-->
-      <!--      <p class="card-text">Price: {{product.price}}</p>-->
-      <!--      <p class="card-text">Weight: {{product.weight}}</p>-->
-      <!--      <div class="d-flex">-->
-      <!--        <div class="btn btn-primary w-100" @click="addProduct" >+</div>-->
-      <!--        <input type="text" v-model="counter" class="mx-1" style="width: 30px">-->
-      <!--        <div class="btn btn-primary w-100" @click="deleteProduct">-</div>-->
-      <!--      </div>-->
+      <!--            <h1 class="card-title">Name: {{ product.name }}</h1>-->
+      <!--            <p class="card-text">Desc.: {{product.text}}</p>-->
+      <!--            <p class="card-text">Price: {{product.price}}</p>-->
+      <!--            <p class="card-text">Weight: {{product.weight}}</p>-->
+      <!--            <div class="d-flex">-->
+      <!--              <div class="btn btn-primary w-100" @click="addProduct" >+</div>-->
+      <!--              <input type="text" v-model="counter" class="mx-1" style="width: 30px">-->
+      <!--              <div class="btn btn-primary w-100" @click="deleteProduct">-</div>-->
+      <!--            </div>-->
 
     </div>
   </div>
@@ -45,6 +45,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "CardProduct",
   props: ["product"],
@@ -63,7 +65,23 @@ export default {
       if (this.counter > 1) {
         this.counter--
       }
+    },
+
+    sendData() {
+      const data = {
+        image: '123',
+        name: '123',
+        description: '123',
+        price: '123',
+        weight: '123',
+      }
+      axios.post("http://127.0.0.1:40721/api/v1/products", data).then(response => {
+        this.$emit('new-product', response.data)
+      })
     }
+
+  },
+  mounted() {
   }
 }
 </script>
